@@ -1,0 +1,36 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  padding: 16px 24px;
+}
+.custom-button {
+  background-color: #8b5cf6; /* Cor personalizada do botão */
+  color: #ffffff; /* Cor do texto */
+  font-weight: 600;
+  height: 45px;
+  border: none !important;
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.custom-button:hover {
+  transition: 1s;
+  background-color: #9c78f0 !important;
+  border: none !important; /* Cor da borda ao passar o mouse */
+}
+
+.custom-button span {
+    margin-inline-start: 0 !important;
+    margin-right: 8px;
+}
+
+.link {
+    text-decoration: none !important;
+}
+
+
