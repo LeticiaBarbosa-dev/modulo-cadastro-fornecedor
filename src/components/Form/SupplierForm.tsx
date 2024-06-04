@@ -169,11 +169,11 @@ export function SupplierForm() {
 
         <div>
           <Form.Item className="botoes">
-            <Button type="primary" onClick={() => navigate("/")}>
+            <Button id="voltar" className="botao" type="primary" onClick={() => navigate("/")}>
               <ArrowLeftOutlined />
               Voltar
             </Button>
-            <Button type="primary" htmlType="submit">
+            <Button className="botao" type="primary" htmlType="submit">
               <SaveOutlined />
               {isEditing ? "Atualizar" : "Salvar"}
             </Button>
