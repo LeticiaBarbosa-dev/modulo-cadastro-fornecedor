@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 import { Supplier, useSuppliers } from "../../context/SupplierContext";
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, Space } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
+import { ArrowLeftOutlined, SaveOutlined } from "@ant-design/icons";
+import "./style.css";
 
 export function SupplierForm() {
   const { addSupplier, updateSupplier, suppliers } = useSuppliers();
@@ -30,107 +32,153 @@ export function SupplierForm() {
   return (
     <div>
       <Form form={form} onFinish={onFinish} layout="vertical">
-        <Form.Item
-          name="cnpj"
-          label="CNPJ"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o nome do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="inscricao_estadual"
-          label="Inscrição Estadual"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o email do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="razao_social"
-          label="Razão Social"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o telefone do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="nome_fantasia"
-          label="Nome Fantasia"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o telefone do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="responsavel"
-          label="Responsável"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o telefone do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="cpf_responsavel"
-          label="CPF"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o telefone do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="telefone"
-          label="Telefone"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o telefone do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="email"
-          label="E-mail"
-          rules={[
-            {
-              required: true,
-              message: "Por favor, insira o telefone do fornecedor",
-            },
-          ]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit">
-            {isEditing ? "Atualizar" : "Salvar"}
-          </Button>
-        </Form.Item>
+        <div className="form">
+          <div>
+            <Form.Item className="custom-label" label="CNPJ">
+              <Space>
+                <Form.Item
+                  name="cnpj"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+            <Form.Item className="custom-label" label="Inscrição Estadual">
+              <Space>
+                <Form.Item
+                  name="inscricao_estadual"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+            <Form.Item className="custom-label" label="Razão Social">
+              <Space>
+                <Form.Item
+                  name="razao_social"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+            <Form.Item className="custom-label" label="Nome Fantasia">
+              <Space>
+                <Form.Item
+                  name="nome_fantasia"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+          </div>
+          <div>
+            <Form.Item className="custom-label" label="Responsável">
+              <Space>
+                <Form.Item
+                  name="responsavel"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+            <Form.Item className="custom-label" label="CPF">
+              <Space>
+                <Form.Item
+                  name="cpf_responsavel"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+            <Form.Item className="custom-label" label="Telefone">
+              <Space>
+                <Form.Item
+                  name="telefone"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+            <Form.Item className="custom-label" label="E-mail">
+              <Space>
+                <Form.Item
+                  name="email"
+                  noStyle
+                  rules={[
+                    {
+                      required: true,
+                      message: "Por favor, insira o nome do fornecedor",
+                    },
+                  ]}
+                >
+                  <Input className="input" />
+                </Form.Item>
+              </Space>
+            </Form.Item>
+          </div>
+        </div>
+
+        <div>
+          <Form.Item className="botoes">
+            <Button type="primary" onClick={() => navigate("/")}>
+              <ArrowLeftOutlined />
+              Voltar
+            </Button>
+            <Button type="primary" htmlType="submit">
+              <SaveOutlined />
+              {isEditing ? "Atualizar" : "Salvar"}
+            </Button>
+          </Form.Item>
+        </div>
       </Form>
     </div>
   );
