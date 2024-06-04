@@ -23,7 +23,7 @@ export function SupplierList() {
           ]}
         >
           <List.Item.Meta className="item-meta"
-            title={item.nome}
+            title={item.responsavel}
             description={`Email: ${item.email}, Telefone: ${item.telefone}`}
           />
         </List.Item>
