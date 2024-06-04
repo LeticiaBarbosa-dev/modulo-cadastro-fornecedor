@@ -42,7 +42,7 @@ export function SupplierForm() {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor, insira o nome do fornecedor",
+                      message: "Por favor, insira o CPNJ do fornecedor",
                     },
                   ]}
                 >
@@ -58,7 +58,7 @@ export function SupplierForm() {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor, insira o nome do fornecedor",
+                      message: "Por favor, insira o número de inscrição do fornecedor",
                     },
                   ]}
                 >
@@ -74,7 +74,7 @@ export function SupplierForm() {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor, insira o nome do fornecedor",
+                      message: "Por favor, insira a razão social do fornecedor",
                     },
                   ]}
                 >
@@ -90,7 +90,7 @@ export function SupplierForm() {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor, insira o nome do fornecedor",
+                      message: "Por favor, insira o nome fantasia do fornecedor",
                     },
                   ]}
                 >
@@ -108,7 +108,7 @@ export function SupplierForm() {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor, insira o nome do fornecedor",
+                      message: "Por favor, insira o nome do responsável",
                     },
                   ]}
                 >
@@ -124,7 +124,7 @@ export function SupplierForm() {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor, insira o nome do fornecedor",
+                      message: "Por favor, insira o CPF responsável",
                     },
                   ]}
                 >
@@ -140,7 +140,7 @@ export function SupplierForm() {
                   rules={[
                     {
                       required: true,
-                      message: "Por favor, insira o nome do fornecedor",
+                      message: "Por favor, insira o telefone do fornecedor",
                     },
                   ]}
                 >
@@ -153,12 +153,6 @@ export function SupplierForm() {
                 <Form.Item
                   name="email"
                   noStyle
-                  rules={[
-                    {
-                      required: true,
-                      message: "Por favor, insira o nome do fornecedor",
-                    },
-                  ]}
                 >
                   <Input className="input" />
                 </Form.Item>
@@ -175,7 +169,7 @@ export function SupplierForm() {
             </Button>
             <Button className="botao" type="primary" htmlType="submit">
               <SaveOutlined />
-              {isEditing ? "Atualizar" : "Salvar"}
+              {isEditing ? "Salvar" : "Salvar"}
             </Button>
           </Form.Item>
         </div>
