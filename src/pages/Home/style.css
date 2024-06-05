@@ -9,13 +9,9 @@
   background-color: #8b5cf6; /* Cor personalizada do botão */
   color: #ffffff; /* Cor do texto */
   font-weight: 600;
+  width: 230px;
   height: 45px;
   border: none !important;
-  
-
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .custom-button:hover {
