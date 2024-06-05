@@ -1,15 +1,6 @@
 .form {
-  background-color: rgba(211, 211, 212, 0.05);
-  padding: 28px 48px;
-  margin-bottom: 48px;
-  border-radius: 8px;
-  /* background-color: red; */
   display: flex;
   justify-content: space-between;
-}
-.custom-label .ant-form-item-label > label {
-  color: #ffffff; /* Cor personalizada para as labels */
-  font-weight: 500;
 }
 
 .input {
@@ -27,23 +18,9 @@
   outline: 0;
 }
 
-.botoes {
+.container-button {
   display: flex;
   justify-content: flex-end;
-}
-
-.botao {
-  width: 100px;
-  height: 50px;
-  background-color: #8b5cf6;
-  font-weight: 600;
-  border: none;
-}
-
-.botao:hover {
-  transition: .5s;
-  background-color: #9c78f0 !important;
-  border: none !important; /* Cor da borda ao passar o mouse */
 }
 
 #voltar {
