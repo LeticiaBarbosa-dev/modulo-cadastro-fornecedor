@@ -1,0 +1,16 @@
+.details {
+  padding: 16px 24px;
+}
+
+#delete-button {
+  background-color: #f6935c;
+  border: 0;
+}
+
+#delete-button:hover {
+  transition: 0.5s;
+  background-color: #f9a272 !important;
+  border: none !important;
+}
+
+

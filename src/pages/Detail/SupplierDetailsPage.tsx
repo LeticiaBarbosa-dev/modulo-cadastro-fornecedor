@@ -1,6 +1,12 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSuppliers } from "../../context/SupplierContext";
-import { Descriptions, Button, Modal } from "antd";
+import { Descriptions, Button, Modal, ConfigProvider } from "antd";
+import "./style.css";
+import {
+  ArrowLeftOutlined,
+  DeleteOutlined,
+  EditOutlined,
+} from "@ant-design/icons";
 
 export function SupplierDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -23,34 +29,145 @@ export function SupplierDetailsPage() {
   };
 
   return (
-    <div>
-      <Descriptions title="Detalhes do Fornecedor">
-        <Descriptions.Item label="Nome">{supplier.nome}</Descriptions.Item>
-        <Descriptions.Item label="Email">{supplier.email}</Descriptions.Item>
-        <Descriptions.Item label="Telefone">
-          {supplier.telefone}
-        </Descriptions.Item>
-      </Descriptions>
-      <div
-        style={{
-          marginTop: "16px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <Button type="primary" onClick={() => navigate(-1)}>
-          Voltar
-        </Button>
-        <div>
-          <Link to={`/edit/${supplier.id}`}>
-            <Button type="primary" style={{ marginRight: "8px" }}>
-              Editar
+    <div className="details">
+      <div className="header">
+        <img src="/logo.svg" alt="" />
+        <h1>Detalhes do Fornecedor</h1>
+      </div>
+      <div className="card">
+        <ConfigProvider
+          theme={{
+            components: {
+              Descriptions: {
+                contentColor: "#FFFFFF",
+                extraColor: "#FFFFFF",
+                titleColor: "#FFFFFF",
+              },
+              Button: {
+                dangerColor: "#000000"
+              }
+            },
+          }}
+        >
+          <Descriptions layout="vertical" title={supplier.nome_fantasia}>
+            <Descriptions.Item
+              labelStyle={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 18,
+                marginBottom: -16,
+              }}
+              label="CNPJ"
+            >
+              {supplier.cnpj}
+            </Descriptions.Item>
+            <Descriptions.Item
+              labelStyle={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 18,
+                marginBottom: -16,
+              }}
+              label="Inscrição Estadual"
+            >
+              {supplier.inscricao_estadual}
+            </Descriptions.Item>
+            <Descriptions.Item
+              labelStyle={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 18,
+                marginBottom: -16,
+              }}
+              label="Razão Social"
+            >
+              {supplier.razao_social}
+            </Descriptions.Item>
+            <Descriptions.Item
+              labelStyle={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 18,
+                marginBottom: -16,
+              }}
+              label="Nome do Responsável"
+            >
+              {supplier.responsavel}
+            </Descriptions.Item>
+            <Descriptions.Item
+              labelStyle={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 18,
+                marginBottom: -16,
+              }}
+              label="CPF do Responsável"
+            >
+              {supplier.cpf_responsavel}
+            </Descriptions.Item>
+            <Descriptions.Item
+              labelStyle={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 18,
+                marginBottom: -16,
+              }}
+              label="Telefone"
+            >
+              {supplier.telefone}
+            </Descriptions.Item>
+            <Descriptions.Item
+              labelStyle={{
+                color: "white",
+                fontWeight: "bold",
+                fontSize: 18,
+                marginBottom: -16,
+              }}
+              label="Email"
+            >
+              {supplier.email}
+            </Descriptions.Item>
+          </Descriptions>
+
+          <div
+            style={{
+              marginTop: "40px",
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <Button
+              className="button"
+              type="primary"
+              onClick={() => navigate(-1)}
+              icon={<ArrowLeftOutlined />}
+            >
+              Voltar
             </Button>
-          </Link>
-          <Button type="primary" danger onClick={handleDelete}>
-            Excluir
-          </Button>
-        </div>
+            <div>
+              <Link to={`/edit/${supplier.id}`}>
+                <Button
+                  className="button"
+                  type="primary"
+                  style={{ marginRight: "8px" }}
+                  icon={<EditOutlined />}
+                >
+                  Editar
+                </Button>
+              </Link>
+              <Button
+                id="delete-button"
+                className="button"
+                type="primary"
+                danger
+                onClick={handleDelete}
+                icon={<DeleteOutlined />}
+              >
+                Excluir
+              </Button>
+            </div>
+          </div>
+        </ConfigProvider>
       </div>
     </div>
   );
