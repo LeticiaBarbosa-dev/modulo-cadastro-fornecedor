@@ -6,8 +6,8 @@
   padding: 16px 24px;
 }
 .custom-button {
-  background-color: #8b5cf6; /* Cor personalizada do botão */
-  color: #ffffff; /* Cor do texto */
+  background-color: #8b5cf6;
+  color: #ffffff;
   font-weight: 600;
   width: 230px;
   height: 45px;
@@ -17,7 +17,7 @@
 .custom-button:hover {
   transition: 1s;
   background-color: #9c78f0 !important;
-  border: none !important; /* Cor da borda ao passar o mouse */
+  border: none !important;
 }
 
 .custom-button span {
