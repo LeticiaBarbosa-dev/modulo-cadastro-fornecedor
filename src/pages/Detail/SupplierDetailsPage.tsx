@@ -7,25 +7,45 @@ import {
   DeleteOutlined,
   EditOutlined,
 } from "@ant-design/icons";
+import { useState } from "react";
 
 export function SupplierDetailsPage() {
   const { id } = useParams<{ id: string }>();
   const { suppliers, deleteSupplier } = useSuppliers();
-  const supplier = suppliers.find((f) => f.id === Number(id));
+  const supplier = suppliers.find((f) => f.id === String(id));
   const navigate = useNavigate();
+  const [modalVisible, setModalVisible] = useState(false);
 
   if (!supplier) {
     return <p>Fornecedor não encontrado!</p>;
   }
 
-  const handleDelete = () => {
-    Modal.confirm({
-      title: "Tem certeza que deseja excluir este fornecedor?",
-      onOk: () => {
-        deleteSupplier(supplier.id);
-        navigate("/");
-      },
-    });
+  // const handleDelete = () => {
+  //   Modal.confirm({
+  //     title: "Tem certeza que deseja excluir este fornecedor?",
+  //     okText: "Sim",
+  //     cancelText: "Não",
+  //     onOk: () => {
+  //       deleteSupplier(supplier.id);
+  //       navigate("/");
+  //     },
+  //   });
+  // };
+
+  const handleOpenModal = () => {
+    setModalVisible(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalVisible(false);
+  };
+
+  const handleConfirmDelete = () => {
+    // Simular a exclusão do fornecedor (substitua com sua lógica real)
+    console.log("Fornecedor deletado!");
+    deleteSupplier(supplier.id);
+    navigate("/");
+    setModalVisible(false);
   };
 
   return (
@@ -44,8 +64,8 @@ export function SupplierDetailsPage() {
                 titleColor: "#FFFFFF",
               },
               Button: {
-                dangerColor: "#000000"
-              }
+                dangerColor: "#000000",
+              },
             },
           }}
         >
@@ -160,11 +180,31 @@ export function SupplierDetailsPage() {
                 className="button"
                 type="primary"
                 danger
-                onClick={handleDelete}
+                onClick={handleOpenModal}
                 icon={<DeleteOutlined />}
               >
                 Excluir
               </Button>
+              <Modal
+                className="modal-custom"
+                title="Tem certeza que deseja excluir este fornecedor?"
+                open={modalVisible}
+                onCancel={handleCloseModal}
+                footer={[
+                  <Button key="cancel" onClick={handleCloseModal}>
+                    Não
+                  </Button>,
+                  <Button
+                    key="confirm"
+                    type="primary"
+                    onClick={handleConfirmDelete}
+                  >
+                    Sim
+                  </Button>,
+                ]}
+              >
+                <p>Tem certeza que deseja excluir este fornecedor?</p>
+              </Modal>
             </div>
           </div>
         </ConfigProvider>
