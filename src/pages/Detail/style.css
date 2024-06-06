@@ -2,6 +2,17 @@
   padding: 16px 24px;
 }
 
+.modal-custom .ant-modal-content{
+  height: 200px;
+  background-color: #fff;
+}
+
+.modal-custom .ant-modal-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #delete-button {
   background-color: #f6935c;
   border: 0;
