@@ -1,8 +1,9 @@
-import React, { createContext, useState, ReactNode, useContext } from 'react';
-import { loadFromLocalStorage, saveToLocalStorage } from '../utils/localStorage';
+import React, { createContext, useState, ReactNode, useContext, useEffect } from 'react';
+// import { loadFromLocalStorage, saveToLocalStorage } from '../utils/localStorage';
+import axios from 'axios';
 
 export interface Supplier {
-  id: number;
+  id: string;
   cnpj: string;
   inscricao_estadual: string;
   razao_social: string;
@@ -15,42 +16,45 @@ export interface Supplier {
 
 interface SuppliersContextProps {
   suppliers: Supplier[];
-  addSupplier: (supplier: Omit<Supplier, 'id'>) => void;
+  addSupplier: (supplier: Supplier) => void;
   updateSupplier: (supplier: Supplier) => void;
-  deleteSupplier: (id: number) => void;
+  deleteSupplier: (id: string) => void;
 }
 
 const SuppliersContext = createContext<SuppliersContextProps | undefined>(undefined);
 
 export const SuppliersProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [suppliers, setSuppliers] = useState<Supplier[]>(() => {
-    const storedSuppliers = loadFromLocalStorage<Supplier[]>('fornecedores');
-    return storedSuppliers ?? [];
-  });
+  const [suppliers, setSuppliers] = useState<Supplier[]>([])
 
-  const addSupplier = (supplier: Omit<Supplier, 'id'>) => {
-    const newSupplier: Supplier = { ...supplier, id: suppliers.length + 1 };
-    setSuppliers((prev) => {
-      const updatedSupliers = [...prev, newSupplier];
-      saveToLocalStorage('fornecedores', updatedSupliers);
-      return updatedSupliers;
-    });
+  useEffect(() => {
+    axios.get('http://localhost:5000/fornecedores')
+      .then(response => setSuppliers(response.data))
+      .catch(error => console.error('Erro ao buscar fornecedores:', error));
+  }, []);
+
+
+  const addSupplier = (supplier: Supplier) => {
+    axios.post('http://localhost:5000/fornecedores', supplier)
+      .then(response => setSuppliers([...suppliers, response.data]))
+      .catch(error => console.error('Erro ao adicionar fornecedor:', error));
+  }
+
+  const updateSupplier = (updatedSupplier: Supplier) => {
+    axios.put(`http://localhost:5000/fornecedores/${updatedSupplier.id}`, updatedSupplier)
+      .then(() => {
+        setSuppliers(suppliers.map(supplier =>
+          supplier.id === updatedSupplier.id ? updatedSupplier : supplier
+        ));
+      })
+      .catch(error => console.error('Erro ao atualizar fornecedor:', error));
   };
 
-  const updateSupplier = (supplier: Supplier) => {
-    setSuppliers((prev) => {
-      const updatedSuppliers = prev.map((f) => (f.id === supplier.id ? supplier : f));
-      saveToLocalStorage('fornecedores', updatedSuppliers);
-      return updatedSuppliers;
-    });
-  };
-
-  const deleteSupplier = (id: number) => {
-    setSuppliers((prev) => {
-      const updatedSuppliers = prev.filter((f) => f.id !== id);
-      saveToLocalStorage('fornecedores', updatedSuppliers);
-      return updatedSuppliers;
-    });
+  const deleteSupplier = (id: string) => {
+    axios.delete(`http://localhost:5000/fornecedores/${id}`)
+      .then(() => {
+        setSuppliers(suppliers.filter(supplier => supplier.id !== id));
+      })
+      .catch(error => console.error('Erro ao deletar fornecedor:', error));
   };
 
   return (
