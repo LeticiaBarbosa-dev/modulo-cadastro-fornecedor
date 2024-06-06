@@ -20,18 +20,6 @@ export function SupplierDetailsPage() {
     return <p>Fornecedor não encontrado!</p>;
   }
 
-  // const handleDelete = () => {
-  //   Modal.confirm({
-  //     title: "Tem certeza que deseja excluir este fornecedor?",
-  //     okText: "Sim",
-  //     cancelText: "Não",
-  //     onOk: () => {
-  //       deleteSupplier(supplier.id);
-  //       navigate("/");
-  //     },
-  //   });
-  // };
-
   const handleOpenModal = () => {
     setModalVisible(true);
   };
@@ -41,8 +29,6 @@ export function SupplierDetailsPage() {
   };
 
   const handleConfirmDelete = () => {
-    // Simular a exclusão do fornecedor (substitua com sua lógica real)
-    console.log("Fornecedor deletado!");
     deleteSupplier(supplier.id);
     navigate("/");
     setModalVisible(false);
