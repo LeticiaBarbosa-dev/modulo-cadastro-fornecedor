@@ -12,7 +12,7 @@ export function SupplierForm() {
   const [form] = Form.useForm();
 
   const isEditing = !!id;
-  const currentSupplier = suppliers.find((f) => f.id === Number(id));
+  const currentSupplier = suppliers.find((f) => f.id === String(id));
 
   useEffect(() => {
     if (isEditing && currentSupplier) {
@@ -20,7 +20,7 @@ export function SupplierForm() {
     }
   }, [isEditing, currentSupplier, form]);
 
-  const onFinish = (values: Omit<Supplier, "id">) => {
+  const onFinish = (values: Supplier) => {
     if (isEditing && currentSupplier) {
       updateSupplier({ ...currentSupplier, ...values });
     } else {
