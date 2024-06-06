@@ -1,4 +1,4 @@
-import { useSuppliers } from "../../context/SupplierContext";
+import { Supplier, useSuppliers } from "../../context/SupplierContext";
 import { Table } from "../Table/Table";
 import { TableCell } from "../Table/TableCell";
 import { TableHeader } from "../Table/TableHeader";
@@ -7,9 +7,26 @@ import { EyeOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 import { IconButton } from "../IconButton";
 import "./style.css";
+import { useEffect, useState } from "react";
+import { Pagination } from "antd";
+
+const ITEMS_PER_PAGE = 10;
 
 export function SupplierList() {
   const { suppliers } = useSuppliers();
+  const [currentPage, setCurrentPage] = useState(1);
+  const [currentSuppliers, setCurrentSuppliers] = useState<Supplier[]>([]);
+
+  useEffect(() => {
+    const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+    const endIndex = startIndex + ITEMS_PER_PAGE;
+    setCurrentSuppliers(suppliers.slice(startIndex, endIndex));
+  }, [currentPage, suppliers]);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+  };
+
   return (
     <Table>
       <thead>
@@ -22,7 +39,7 @@ export function SupplierList() {
         </tr>
       </thead>
       <tbody>
-        {suppliers.map((supplier) => {
+        {currentSuppliers.map((supplier) => {
           return (
             <TableRow key={supplier.id}>
               <TableCell>{supplier.cnpj}</TableCell>
@@ -40,40 +57,13 @@ export function SupplierList() {
           );
         })}
       </tbody>
-      {/* <tfoot>
-        <tr>
-          <TableCell colSpan={3}>
-            Mostrando {attendees.length} de {total} itens
-          </TableCell>
-          <TableCell className="text-right" colSpan={3}>
-            <div className="inline-flex items-center gap-8">
-              <span>
-                Página {page} de {totalPages}
-              </span>
-              <div className="flex gap-1.5">
-                <IconButton onClick={goToFirstPage} disabled={page === 1}>
-                  <ChevronsLeft className="size-4" />
-                </IconButton>
-                <IconButton onClick={goToPreviousPage} disabled={page === 1}>
-                  <ChevronLeft className="size-4" />
-                </IconButton>
-                <IconButton
-                  onClick={goToNextPage}
-                  disabled={page === totalPages}
-                >
-                  <ChevronRight className="size-4" />
-                </IconButton>
-                <IconButton
-                  onClick={goToLastPage}
-                  disabled={page === totalPages}
-                >
-                  <ChevronsRight className="size-4" />
-                </IconButton>
-              </div>
-            </div>
-          </TableCell>
-        </tr>
-      </tfoot> */}
+      <Pagination
+        current={currentPage}
+        pageSize={ITEMS_PER_PAGE}
+        total={suppliers.length}
+        onChange={handlePageChange}
+        style={{ marginTop: 12, textAlign: "left" }}
+      />
     </Table>
   );
 }
