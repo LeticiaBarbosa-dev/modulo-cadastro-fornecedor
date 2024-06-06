@@ -29,5 +29,5 @@ body {
 .button:hover {
   transition: 0.5s;
   background-color: #9c78f0 !important;
-  border: none !important; /* Cor da borda ao passar o mouse */
+  border: none !important;
 }
