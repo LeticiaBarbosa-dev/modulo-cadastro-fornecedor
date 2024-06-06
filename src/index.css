@@ -4,7 +4,7 @@
 }
 
 body {
-  background-color: #09090A;
+  background-color: #09090a;
 }
 
 .header {
@@ -30,4 +30,14 @@ body {
   transition: 0.5s;
   background-color: #9c78f0 !important;
   border: none !important;
+}
+
+.ant-input-outlined.ant-input-status-error:not(.ant-input-disabled) {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+:where(.css-dev-only-do-not-override-v6t21c).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):hover {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
 }

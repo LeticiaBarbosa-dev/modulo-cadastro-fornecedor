@@ -8,9 +8,9 @@ import { Link } from "react-router-dom";
 import { IconButton } from "../IconButton";
 import "./style.css";
 import { useEffect, useState } from "react";
-import { Pagination } from "antd";
+import { ConfigProvider, Pagination } from "antd";
 
-const ITEMS_PER_PAGE = 10;
+const ITEMS_PER_PAGE = 8;
 
 export function SupplierList() {
   const { suppliers } = useSuppliers();
@@ -28,42 +28,58 @@ export function SupplierList() {
   };
 
   return (
-    <Table>
-      <thead>
-        <tr className="header-table">
-          <TableHeader>CNPJ</TableHeader>
-          <TableHeader>Razão Social</TableHeader>
-          <TableHeader>Nome Fantasia</TableHeader>
-          <TableHeader>Telefone</TableHeader>
-          <TableHeader style={{ width: 64 }}></TableHeader>
-        </tr>
-      </thead>
-      <tbody>
-        {currentSuppliers.map((supplier) => {
-          return (
-            <TableRow key={supplier.id}>
-              <TableCell>{supplier.cnpj}</TableCell>
-              <TableCell>{supplier.razao_social}</TableCell>
-              <TableCell>{supplier.nome_fantasia}</TableCell>
-              <TableCell>{supplier.telefone}</TableCell>
-              <TableCell id="button-view-cell">
-                <Link to={`/fornecedor/${supplier.id}`} key="view">
-                  <IconButton className="custom-view-button">
-                    <EyeOutlined />
-                  </IconButton>
-                </Link>
-              </TableCell>
-            </TableRow>
-          );
-        })}
-      </tbody>
-      <Pagination
-        current={currentPage}
-        pageSize={ITEMS_PER_PAGE}
-        total={suppliers.length}
-        onChange={handlePageChange}
-        style={{ marginTop: 12, textAlign: "left" }}
-      />
-    </Table>
+    <div>
+      <Table>
+        <thead>
+          <tr className="header-table">
+            <TableHeader>CNPJ</TableHeader>
+            <TableHeader>Razão Social</TableHeader>
+            <TableHeader>Nome Fantasia</TableHeader>
+            <TableHeader>Telefone</TableHeader>
+            <TableHeader style={{ width: 64 }}></TableHeader>
+          </tr>
+        </thead>
+        <tbody>
+          {currentSuppliers.map((supplier) => {
+            return (
+              <TableRow key={supplier.id}>
+                <TableCell>{supplier.cnpj}</TableCell>
+                <TableCell>{supplier.razao_social}</TableCell>
+                <TableCell>{supplier.nome_fantasia}</TableCell>
+                <TableCell>{supplier.telefone}</TableCell>
+                <TableCell id="button-view-cell">
+                  <Link to={`/fornecedor/${supplier.id}`} key="view">
+                    <IconButton className="custom-view-button">
+                      <EyeOutlined />
+                    </IconButton>
+                  </Link>
+                </TableCell>
+              </TableRow>
+            );
+          })}
+        </tbody>
+      </Table>
+      <tfoot>
+        <ConfigProvider
+          theme={{
+            components: {
+              Pagination: {
+                itemActiveBg: "rgba(255, 255, 255, 0.1)",
+                itemActiveColorDisabled: "#FFFFFF"
+              },
+            },
+          }}
+        >
+          <Pagination
+            responsive={true}
+            current={currentPage}
+            pageSize={ITEMS_PER_PAGE}
+            total={suppliers.length}
+            onChange={handlePageChange}
+            style={{ color: "#FFFFFF", textAlign: "left" }}
+          />
+        </ConfigProvider>
+      </tfoot>
+    </div>
   );
 }
