@@ -32,13 +32,6 @@ export const SuppliersProvider: React.FC<{ children: ReactNode }> = ({ children 
       .catch(error => console.error('Erro ao buscar fornecedores:', error));
   }, []);
 
-  // useEffect(() => {
-  //   fetch('./db.json')
-  //     .then(response => response.json())
-  //     .then(data => setSuppliers(data))
-  //     .catch(error => console.error('Erro ao buscar fornecedores:', error));
-  // }, []);
-
 
   const addSupplier = (supplier: Supplier) => {
     axios.post('http://localhost:5000/fornecedores', supplier)

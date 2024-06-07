@@ -1,224 +1,222 @@
-{
-  "fornecedores": [
-    {
-      "id": "1",
-      "cnpj": "12.345.678/0001-90",
-      "razao_social": "Fornecedor Exemplo 1 LTDA",
-      "nome_fantasia": "Fornecedor 1",
-      "responsavel": "João Silva",
-      "cpf_responsavel": "123.456.789-00",
-      "email": "fornecedor1@example.com",
-      "telefone": "(11) 1234-5678",
-      "inscricao_estadual": "123.456.789.000"
-    },
-    {
-      "id": "2",
-      "cnpj": "98.765.432/0001-10",
-      "razao_social": "Fornecedor Exemplo 2 ME",
-      "nome_fantasia": "Fornecedor 2",
-      "responsavel": "Maria Oliveira",
-      "cpf_responsavel": "987.654.321-00",
-      "email": "fornecedor2@example.com",
-      "telefone": "(21) 8765-4321",
-      "inscricao_estadual": "987.654.321.000"
-    },
-    {
-      "id": "3",
-      "cnpj": "11.222.333/0001-44",
-      "razao_social": "Fornecedor Exemplo 3 SA",
-      "nome_fantasia": "Fornecedor 3",
-      "responsavel": "Carlos Souza",
-      "cpf_responsavel": "111.222.333-44",
-      "email": "fornecedor3@example.com",
-      "telefone": "(31) 1122-3344",
-      "inscricao_estadual": "111.222.333.444"
-    },
-    {
-      "id": "4",
-      "cnpj": "22.333.444/0001-55",
-      "razao_social": "Fornecedor Exemplo 4 EIRELI",
-      "nome_fantasia": "Fornecedor 4",
-      "responsavel": "Ana Paula",
-      "cpf_responsavel": "222.333.444-55",
-      "email": "fornecedor4@example.com",
-      "telefone": "(41) 2233-4455",
-      "inscricao_estadual": "222.333.444.555"
-    },
-    {
-      "id": "5",
-      "cnpj": "33.444.555/0001-66",
-      "razao_social": "Fornecedor Exemplo 5 LTDA",
-      "nome_fantasia": "Fornecedor 5",
-      "responsavel": "Roberto Lima",
-      "cpf_responsavel": "333.444.555-66",
-      "email": "fornecedor5@example.com",
-      "telefone": "(51) 3344-5566",
-      "inscricao_estadual": "333.444.555.666"
-    },
-    {
-      "id": "6",
-      "cnpj": "44.555.666/0001-77",
-      "razao_social": "Fornecedor Exemplo 6 ME",
-      "nome_fantasia": "Fornecedor 6",
-      "responsavel": "Patricia Santos",
-      "cpf_responsavel": "444.555.666-77",
-      "email": "fornecedor6@example.com",
-      "telefone": "(61) 4455-6677",
-      "inscricao_estadual": "444.555.666.777"
-    },
-    {
-      "id": "7",
-      "cnpj": "55.666.777/0001-88",
-      "razao_social": "Fornecedor Exemplo 7 SA",
-      "nome_fantasia": "Fornecedor 7",
-      "responsavel": "Marcos Fernandes",
-      "cpf_responsavel": "555.666.777-88",
-      "email": "fornecedor7@example.com",
-      "telefone": "(71) 5566-7788",
-      "inscricao_estadual": "555.666.777.888"
-    },
-    {
-      "id": "8",
-      "cnpj": "66.777.888/0001-99",
-      "razao_social": "Fornecedor Exemplo 8 EIRELI",
-      "nome_fantasia": "Fornecedor 8",
-      "responsavel": "Juliana Mendes",
-      "cpf_responsavel": "666.777.888-99",
-      "email": "fornecedor8@example.com",
-      "telefone": "(81) 6677-8899",
-      "inscricao_estadual": "666.777.888.999"
-    },
-    {
-      "id": "9",
-      "cnpj": "77.888.999/0001-00",
-      "razao_social": "Fornecedor Exemplo 9 ME",
-      "nome_fantasia": "Fornecedor 9",
-      "responsavel": "Fernando Almeida",
-      "cpf_responsavel": "777.888.999-00",
-      "email": "fornecedor9@example.com",
-      "telefone": "(91) 7788-9900",
-      "inscricao_estadual": "777.888.999.000"
-    },
-    {
-      "id": "10",
-      "cnpj": "88.999.000/0001-11",
-      "razao_social": "Fornecedor Exemplo 10 LTDA",
-      "nome_fantasia": "Fornecedor 10",
-      "responsavel": "Beatriz Gomes",
-      "cpf_responsavel": "888.999.000-11",
-      "email": "fornecedor10@example.com",
-      "telefone": "(92) 8899-0011",
-      "inscricao_estadual": "888.999.000.111"
-    },
-    {
-      "id": "11",
-      "cnpj": "99.000.111/0001-22",
-      "razao_social": "Fornecedor Exemplo 11 ME",
-      "nome_fantasia": "Fornecedor 11",
-      "responsavel": "Gustavo Pereira",
-      "cpf_responsavel": "999.000.111-22",
-      "email": "fornecedor11@example.com",
-      "telefone": "(93) 9000-1122",
-      "inscricao_estadual": "999.000.111.222"
-    },
-    {
-      "id": "12",
-      "cnpj": "00.111.222/0001-33",
-      "razao_social": "Fornecedor Exemplo 12 SA",
-      "nome_fantasia": "Fornecedor 12",
-      "responsavel": "Larissa Costa",
-      "cpf_responsavel": "000.111.222-33",
-      "email": "fornecedor12@example.com",
-      "telefone": "(94) 0111-2233",
-      "inscricao_estadual": "000.111.222.333"
-    },
-    {
-      "id": "13",
-      "cnpj": "11.222.333/0001-44",
-      "razao_social": "Fornecedor Exemplo 13 EIRELI",
-      "nome_fantasia": "Fornecedor 13",
-      "responsavel": "Thiago Rocha",
-      "cpf_responsavel": "111.222.333-44",
-      "email": "fornecedor13@example.com",
-      "telefone": "(95) 1222-3344",
-      "inscricao_estadual": "111.222.333.444"
-    },
-    {
-      "id": "14",
-      "cnpj": "22.333.444/0001-55",
-      "razao_social": "Fornecedor Exemplo 14 ME",
-      "nome_fantasia": "Fornecedor 14",
-      "responsavel": "Renata Martins",
-      "cpf_responsavel": "222.333.444-55",
-      "email": "fornecedor14@example.com",
-      "telefone": "(96) 2333-4455",
-      "inscricao_estadual": "222.333.444.555"
-    },
-    {
-      "id": "15",
-      "cnpj": "33.444.555/0001-66",
-      "razao_social": "Fornecedor Exemplo 15 LTDA",
-      "nome_fantasia": "Fornecedor 15",
-      "responsavel": "Bruno Carvalho",
-      "cpf_responsavel": "333.444.555-66",
-      "email": "fornecedor15@example.com",
-      "telefone": "(97) 3444-5566",
-      "inscricao_estadual": "333.444.555.666"
-    },
-    {
-      "id": "16",
-      "cnpj": "44.555.666/0001-77",
-      "razao_social": "Fornecedor Exemplo 16 SA",
-      "nome_fantasia": "Fornecedor 16",
-      "responsavel": "Camila Almeida",
-      "cpf_responsavel": "444.555.666-77",
-      "email": "fornecedor16@example.com",
-      "telefone": "(98) 4555-6677",
-      "inscricao_estadual": "444.555.666.777"
-    },
-    {
-      "id": "17",
-      "cnpj": "55.666.777/0001-88",
-      "razao_social": "Fornecedor Exemplo 17 EIRELI",
-      "nome_fantasia": "Fornecedor 17",
-      "responsavel": "Felipe Andrade",
-      "cpf_responsavel": "555.666.777-88",
-      "email": "fornecedor17@example.com",
-      "telefone": "(99) 5666-7788",
-      "inscricao_estadual": "555.666.777.888"
-    },
-    {
-      "id": "18",
-      "cnpj": "66.777.888/0001-99",
-      "razao_social": "Fornecedor Exemplo 18 ME",
-      "nome_fantasia": "Fornecedor 18",
-      "responsavel": "Viviane Santos",
-      "cpf_responsavel": "666.777.888-99",
-      "email": "fornecedor18@example.com",
-      "telefone": "(31) 6677-8899",
-      "inscricao_estadual": "666.777.888.999"
-    },
-    {
-      "id": "19",
-      "cnpj": "77.888.999/0001-00",
-      "razao_social": "Fornecedor Exemplo 19 LTDA",
-      "nome_fantasia": "Fornecedor 19",
-      "responsavel": "Ricardo Nunes",
-      "cpf_responsavel": "777.888.999-00",
-      "email": "fornecedor19@example.com",
-      "telefone": "(32) 7788-9900",
-      "inscricao_estadual": "777.888.999.000"
-    },
-    {
-      "id": "20",
-      "cnpj": "88.999.000/0001-11",
-      "razao_social": "Fornecedor Exemplo 20 SA",
-      "nome_fantasia": "Fornecedor 20",
-      "responsavel": "Simone Ribeiro",
-      "cpf_responsavel": "888.999.000-11",
-      "email": "fornecedor20@example.com",
-      "telefone": "(33) 8899-0011",
-      "inscricao_estadual": "888.999.000.111"
-    }
-  ]
-}
+[
+  {
+    "id": "1",
+    "cnpj": "12.345.678/0001-90",
+    "razao_social": "Fornecedor Exemplo 1 LTDA",
+    "nome_fantasia": "Fornecedor 1",
+    "responsavel": "João Silva",
+    "cpf_responsavel": "123.456.789-00",
+    "email": "fornecedor1@example.com",
+    "telefone": "(11) 1234-5678",
+    "inscricao_estadual": "123.456.789.000"
+  },
+  {
+    "id": "2",
+    "cnpj": "98.765.432/0001-10",
+    "razao_social": "Fornecedor Exemplo 2 ME",
+    "nome_fantasia": "Fornecedor 2",
+    "responsavel": "Maria Oliveira",
+    "cpf_responsavel": "987.654.321-00",
+    "email": "fornecedor2@example.com",
+    "telefone": "(21) 8765-4321",
+    "inscricao_estadual": "987.654.321.000"
+  },
+  {
+    "id": "3",
+    "cnpj": "11.222.333/0001-44",
+    "razao_social": "Fornecedor Exemplo 3 SA",
+    "nome_fantasia": "Fornecedor 3",
+    "responsavel": "Carlos Souza",
+    "cpf_responsavel": "111.222.333-44",
+    "email": "fornecedor3@example.com",
+    "telefone": "(31) 1122-3344",
+    "inscricao_estadual": "111.222.333.444"
+  },
+  {
+    "id": "4",
+    "cnpj": "22.333.444/0001-55",
+    "razao_social": "Fornecedor Exemplo 4 EIRELI",
+    "nome_fantasia": "Fornecedor 4",
+    "responsavel": "Ana Paula",
+    "cpf_responsavel": "222.333.444-55",
+    "email": "fornecedor4@example.com",
+    "telefone": "(41) 2233-4455",
+    "inscricao_estadual": "222.333.444.555"
+  },
+  {
+    "id": "5",
+    "cnpj": "33.444.555/0001-66",
+    "razao_social": "Fornecedor Exemplo 5 LTDA",
+    "nome_fantasia": "Fornecedor 5",
+    "responsavel": "Roberto Lima",
+    "cpf_responsavel": "333.444.555-66",
+    "email": "fornecedor5@example.com",
+    "telefone": "(51) 3344-5566",
+    "inscricao_estadual": "333.444.555.666"
+  },
+  {
+    "id": "6",
+    "cnpj": "44.555.666/0001-77",
+    "razao_social": "Fornecedor Exemplo 6 ME",
+    "nome_fantasia": "Fornecedor 6",
+    "responsavel": "Patricia Santos",
+    "cpf_responsavel": "444.555.666-77",
+    "email": "fornecedor6@example.com",
+    "telefone": "(61) 4455-6677",
+    "inscricao_estadual": "444.555.666.777"
+  },
+  {
+    "id": "7",
+    "cnpj": "55.666.777/0001-88",
+    "razao_social": "Fornecedor Exemplo 7 SA",
+    "nome_fantasia": "Fornecedor 7",
+    "responsavel": "Marcos Fernandes",
+    "cpf_responsavel": "555.666.777-88",
+    "email": "fornecedor7@example.com",
+    "telefone": "(71) 5566-7788",
+    "inscricao_estadual": "555.666.777.888"
+  },
+  {
+    "id": "8",
+    "cnpj": "66.777.888/0001-99",
+    "razao_social": "Fornecedor Exemplo 8 EIRELI",
+    "nome_fantasia": "Fornecedor 8",
+    "responsavel": "Juliana Mendes",
+    "cpf_responsavel": "666.777.888-99",
+    "email": "fornecedor8@example.com",
+    "telefone": "(81) 6677-8899",
+    "inscricao_estadual": "666.777.888.999"
+  },
+  {
+    "id": "9",
+    "cnpj": "77.888.999/0001-00",
+    "razao_social": "Fornecedor Exemplo 9 ME",
+    "nome_fantasia": "Fornecedor 9",
+    "responsavel": "Fernando Almeida",
+    "cpf_responsavel": "777.888.999-00",
+    "email": "fornecedor9@example.com",
+    "telefone": "(91) 7788-9900",
+    "inscricao_estadual": "777.888.999.000"
+  },
+  {
+    "id": "10",
+    "cnpj": "88.999.000/0001-11",
+    "razao_social": "Fornecedor Exemplo 10 LTDA",
+    "nome_fantasia": "Fornecedor 10",
+    "responsavel": "Beatriz Gomes",
+    "cpf_responsavel": "888.999.000-11",
+    "email": "fornecedor10@example.com",
+    "telefone": "(92) 8899-0011",
+    "inscricao_estadual": "888.999.000.111"
+  },
+  {
+    "id": "11",
+    "cnpj": "99.000.111/0001-22",
+    "razao_social": "Fornecedor Exemplo 11 ME",
+    "nome_fantasia": "Fornecedor 11",
+    "responsavel": "Gustavo Pereira",
+    "cpf_responsavel": "999.000.111-22",
+    "email": "fornecedor11@example.com",
+    "telefone": "(93) 9000-1122",
+    "inscricao_estadual": "999.000.111.222"
+  },
+  {
+    "id": "12",
+    "cnpj": "00.111.222/0001-33",
+    "razao_social": "Fornecedor Exemplo 12 SA",
+    "nome_fantasia": "Fornecedor 12",
+    "responsavel": "Larissa Costa",
+    "cpf_responsavel": "000.111.222-33",
+    "email": "fornecedor12@example.com",
+    "telefone": "(94) 0111-2233",
+    "inscricao_estadual": "000.111.222.333"
+  },
+  {
+    "id": "13",
+    "cnpj": "11.222.333/0001-44",
+    "razao_social": "Fornecedor Exemplo 13 EIRELI",
+    "nome_fantasia": "Fornecedor 13",
+    "responsavel": "Thiago Rocha",
+    "cpf_responsavel": "111.222.333-44",
+    "email": "fornecedor13@example.com",
+    "telefone": "(95) 1222-3344",
+    "inscricao_estadual": "111.222.333.444"
+  },
+  {
+    "id": "14",
+    "cnpj": "22.333.444/0001-55",
+    "razao_social": "Fornecedor Exemplo 14 ME",
+    "nome_fantasia": "Fornecedor 14",
+    "responsavel": "Renata Martins",
+    "cpf_responsavel": "222.333.444-55",
+    "email": "fornecedor14@example.com",
+    "telefone": "(96) 2333-4455",
+    "inscricao_estadual": "222.333.444.555"
+  },
+  {
+    "id": "15",
+    "cnpj": "33.444.555/0001-66",
+    "razao_social": "Fornecedor Exemplo 15 LTDA",
+    "nome_fantasia": "Fornecedor 15",
+    "responsavel": "Bruno Carvalho",
+    "cpf_responsavel": "333.444.555-66",
+    "email": "fornecedor15@example.com",
+    "telefone": "(97) 3444-5566",
+    "inscricao_estadual": "333.444.555.666"
+  },
+  {
+    "id": "16",
+    "cnpj": "44.555.666/0001-77",
+    "razao_social": "Fornecedor Exemplo 16 SA",
+    "nome_fantasia": "Fornecedor 16",
+    "responsavel": "Camila Almeida",
+    "cpf_responsavel": "444.555.666-77",
+    "email": "fornecedor16@example.com",
+    "telefone": "(98) 4555-6677",
+    "inscricao_estadual": "444.555.666.777"
+  },
+  {
+    "id": "17",
+    "cnpj": "55.666.777/0001-88",
+    "razao_social": "Fornecedor Exemplo 17 EIRELI",
+    "nome_fantasia": "Fornecedor 17",
+    "responsavel": "Felipe Andrade",
+    "cpf_responsavel": "555.666.777-88",
+    "email": "fornecedor17@example.com",
+    "telefone": "(99) 5666-7788",
+    "inscricao_estadual": "555.666.777.888"
+  },
+  {
+    "id": "18",
+    "cnpj": "66.777.888/0001-99",
+    "razao_social": "Fornecedor Exemplo 18 ME",
+    "nome_fantasia": "Fornecedor 18",
+    "responsavel": "Viviane Santos",
+    "cpf_responsavel": "666.777.888-99",
+    "email": "fornecedor18@example.com",
+    "telefone": "(31) 6677-8899",
+    "inscricao_estadual": "666.777.888.999"
+  },
+  {
+    "id": "19",
+    "cnpj": "77.888.999/0001-00",
+    "razao_social": "Fornecedor Exemplo 19 LTDA",
+    "nome_fantasia": "Fornecedor 19",
+    "responsavel": "Ricardo Nunes",
+    "cpf_responsavel": "777.888.999-00",
+    "email": "fornecedor19@example.com",
+    "telefone": "(32) 7788-9900",
+    "inscricao_estadual": "777.888.999.000"
+  },
+  {
+    "id": "20",
+    "cnpj": "88.999.000/0001-11",
+    "razao_social": "Fornecedor Exemplo 20 SA",
+    "nome_fantasia": "Fornecedor 20",
+    "responsavel": "Simone Ribeiro",
+    "cpf_responsavel": "888.999.000-11",
+    "email": "fornecedor20@example.com",
+    "telefone": "(33) 8899-0011",
+    "inscricao_estadual": "888.999.000.111"
+  }
+]
