@@ -37,7 +37,40 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-:where(.css-dev-only-do-not-override-v6t21c).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):hover {
+:where(
+    .css-dev-only-do-not-override-v6t21c
+  ).ant-input-outlined.ant-input-status-error:not(.ant-input-disabled):hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background: transparent;
+}
+
+.ant-modal .ant-modal-content,
+.ant-modal-title {
+  color: #ffffff !important;
+  background-color: #484849 !important;
+  margin-bottom: 88px !important;
+}
+
+.ant-modal p {
+  display: none;
+}
+
+.ant-btn-default {
+  background-color: transparent;
+  border-color: #8b5cf6;
+}
+
+.ant-btn-default:hover {
+  transition: 0.5s;
+  background-color: #8b5cf6 !important;
+  border-color: #8b5cf6 !important;
+}
+
+.ant-btn-primary {
+  background-color: #8b5cf6;
+  border-color: #8b5cf6;
+}
+
+.ant-btn-primary:hover {
+  background-color: #9c78f0 !important;
 }
