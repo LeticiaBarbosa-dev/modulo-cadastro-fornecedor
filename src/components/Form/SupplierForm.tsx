@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Supplier, useSuppliers } from "../../context/SupplierContext";
-import { Form, Input, Button, Space, ConfigProvider } from "antd";
+import { Form, Input, Button, Space, ConfigProvider, notification } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
 import { ArrowLeftOutlined, SaveOutlined } from "@ant-design/icons";
 import "./style.css";
@@ -11,12 +11,20 @@ export function SupplierForm() {
   const { id } = useParams<{ id: string }>();
   const [form] = Form.useForm();
 
+  const openNotification = () => {
+    notification.success({
+      message: 'Sucesso',
+      description: 'Fornecedor cadastrado com sucesso!',
+    });
+  };
+
   const isEditing = !!id;
   const currentSupplier = suppliers.find((f) => f.id === String(id));
 
   useEffect(() => {
     if (isEditing && currentSupplier) {
       form.setFieldsValue(currentSupplier);
+      
     }
   }, [isEditing, currentSupplier, form]);
 
@@ -25,6 +33,7 @@ export function SupplierForm() {
       updateSupplier({ ...currentSupplier, ...values });
     } else {
       addSupplier(values);
+      openNotification();
     }
     navigate("/");
   };
