@@ -35,7 +35,7 @@ export function SupplierForm() {
       addSupplier(values);
       openNotification();
     }
-    navigate("/");
+    navigate("/modulo-cadastro-fornecedor/");
   };
 
   return (

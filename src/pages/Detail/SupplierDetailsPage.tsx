@@ -30,7 +30,7 @@ export function SupplierDetailsPage() {
 
   const handleConfirmDelete = () => {
     deleteSupplier(supplier.id);
-    navigate("/");
+    navigate("/modulo-cadastro-fornecedor/");
     setModalVisible(false);
   };
 
