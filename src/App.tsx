@@ -9,7 +9,7 @@ export function App() {
   return (
     <SuppliersProvider>
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/modulo-cadastro-fornecedor" element={<HomePage />} />
         <Route path="/cadastro" element={<RegisterPage />} />
         <Route path="/edit/:id" element={<EditPage />} />
         <Route path="/fornecedor/:id" element={<SupplierDetailsPage />} />
