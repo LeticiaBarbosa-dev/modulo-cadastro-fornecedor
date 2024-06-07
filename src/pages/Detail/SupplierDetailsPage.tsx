@@ -11,8 +11,8 @@ import { useState } from "react";
 
 export function SupplierDetailsPage() {
   const { id } = useParams<{ id: string }>();
-  const { suppliers, deleteSupplier } = useSuppliers();
-  const supplier = suppliers.find((f) => f.id === String(id));
+  const { deleteSupplier, getSupplierById } = useSuppliers();
+  const supplier = getSupplierById(id!);
   const navigate = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
 

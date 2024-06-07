@@ -1,6 +1,10 @@
-import React, { createContext, useState, ReactNode, useContext, useEffect } from 'react';
-// import { loadFromLocalStorage, saveToLocalStorage } from '../utils/localStorage';
-import axios from 'axios';
+import React, {
+  createContext,
+  useState,
+  ReactNode,
+  useContext,
+  useEffect,
+} from "react";
 
 export interface Supplier {
   id: string;
@@ -14,51 +18,69 @@ export interface Supplier {
   email: string;
 }
 
+import { v4 as uuidv4 } from "uuid";
+
 interface SuppliersContextProps {
   suppliers: Supplier[];
-  addSupplier: (supplier: Supplier) => void;
-  updateSupplier: (supplier: Supplier) => void;
+  addSupplier: (supplier: Omit<Supplier, "id">) => void;
+  updateSupplier: (supplierSupdated: Supplier) => void;
   deleteSupplier: (id: string) => void;
+  getSupplierById: (id: string) => Supplier | undefined;
 }
 
-const SuppliersContext = createContext<SuppliersContextProps | undefined>(undefined);
+const SuppliersContext = createContext<SuppliersContextProps | undefined>(
+  undefined
+);
 
-export const SuppliersProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [suppliers, setSuppliers] = useState<Supplier[]>([])
+interface SupplierProviderProps {
+  children: ReactNode;
+}
+
+export const SuppliersProvider: React.FC<SupplierProviderProps> = ({
+  children,
+}) => {
+  const [suppliers, setSuppliers] = useState<Supplier[]>(() => {
+    const storedSuppliers = localStorage.getItem("fornecedores");
+    return storedSuppliers ? JSON.parse(storedSuppliers) : [];
+  });
 
   useEffect(() => {
-    axios.get('http://localhost:5000/fornecedores')
-      .then(response => setSuppliers(response.data))
-      .catch(error => console.error('Erro ao buscar fornecedores:', error));
-  }, []);
+    localStorage.setItem("fornecedores", JSON.stringify(suppliers));
+  }, [suppliers]);
 
+  const addSupplier = (supplier: Omit<Supplier, "id">) => {
+    const newSupplier = { ...supplier, id: uuidv4() };
+    setSuppliers((prevSuppliers) => [...prevSuppliers, newSupplier]);
+  };
 
-  const addSupplier = (supplier: Supplier) => {
-    axios.post('http://localhost:5000/fornecedores', supplier)
-      .then(response => setSuppliers([...suppliers, response.data]))
-      .catch(error => console.error('Erro ao adicionar fornecedor:', error));
-  }
-
-  const updateSupplier = (updatedSupplier: Supplier) => {
-    axios.put(`http://localhost:5000/fornecedores/${updatedSupplier.id}`, updatedSupplier)
-      .then(() => {
-        setSuppliers(suppliers.map(supplier =>
-          supplier.id === updatedSupplier.id ? updatedSupplier : supplier
-        ));
-      })
-      .catch(error => console.error('Erro ao atualizar fornecedor:', error));
+  const updateSupplier = (supplierUpdated: Supplier) => {
+    setSuppliers((prevSuppliers) =>
+      prevSuppliers.map((supplier) =>
+        supplier.id === supplierUpdated.id ? supplierUpdated : supplier
+      )
+    );
   };
 
   const deleteSupplier = (id: string) => {
-    axios.delete(`http://localhost:5000/fornecedores/${id}`)
-      .then(() => {
-        setSuppliers(suppliers.filter(supplier => supplier.id !== id));
-      })
-      .catch(error => console.error('Erro ao deletar fornecedor:', error));
+    setSuppliers((prevSuppliers) =>
+      prevSuppliers.filter((supplier) => supplier.id !== id)
+    );
+  };
+
+  const getSupplierById = (id: string): Supplier | undefined => {
+    return suppliers.find((supplier) => supplier.id === id);
   };
 
   return (
-    <SuppliersContext.Provider value={{ suppliers, addSupplier, updateSupplier, deleteSupplier }}>
+    <SuppliersContext.Provider
+      value={{
+        suppliers,
+        addSupplier,
+        updateSupplier,
+        deleteSupplier,
+        getSupplierById,
+      }}
+    >
       {children}
     </SuppliersContext.Provider>
   );
@@ -66,6 +88,9 @@ export const SuppliersProvider: React.FC<{ children: ReactNode }> = ({ children 
 
 export const useSuppliers = () => {
   const context = useContext(SuppliersContext);
-  if (!context) throw new Error('useFornecedores must be used within a FornecedoresProvider');
+  if (!context)
+    throw new Error(
+      "useFornecedores must be used within a FornecedoresProvider"
+    );
   return context;
 };
