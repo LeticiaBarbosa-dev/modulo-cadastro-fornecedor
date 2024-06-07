@@ -16,6 +16,7 @@ export function SupplierList() {
   const { suppliers } = useSuppliers();
   const [currentPage, setCurrentPage] = useState(1);
   const [currentSuppliers, setCurrentSuppliers] = useState<Supplier[]>([]);
+  
 
   useEffect(() => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
