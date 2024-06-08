@@ -16,7 +16,7 @@ export function HomePage() {
             className="custom-button"
             icon={<PlusOutlined />}
           >
-            Cadastrar Fornecedor
+            <span id="span">Cadastrar Fornecedor</span>
           </Button>
         </Link>
       </div>

@@ -1,8 +1,30 @@
 .details {
-  padding: 16px 24px;
+  padding: 20px;
 }
 
-.modal-custom .ant-modal-content{
+.card {
+  background-color: #333333;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.details .button-container {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.details .button-container .button {
+  margin: 8px 0;
+}
+
+.details .button {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.modal-custom .ant-modal-content {
   height: 200px;
   background-color: #fff;
 }
@@ -28,4 +50,56 @@
   font-size: 24px !important;
 }
 
+@media (max-width: 768px) {
+  .details {
+    padding: 10px;
+  }
 
+  .card {
+    padding: 10px;
+  }
+
+  .details .button-container {
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+  }
+
+  .details .button {
+    width: 100%;
+    max-width: 100px;
+  }
+
+  .edit-delete-container-button {
+    display: flex;
+  }
+
+  .ant-descriptions-item-label {
+    font-size: 16px !important;
+  }
+
+  .ant-descriptions-item-content {
+    font-size: 14px !important;
+  }
+
+  /* Estilos responsivos para o modal */
+  .modal-custom .ant-modal-content {
+    height: auto;
+    padding: 20px;
+  }
+
+  .modal-custom .ant-modal-wrap {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  #delete-button {
+    width: 100%;
+    margin-bottom: 10px;
+    margin-left: 11px;
+  }
+
+  .ant-descriptions-title {
+    font-size: 20px !important;
+  }
+}

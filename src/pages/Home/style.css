@@ -5,6 +5,7 @@
   margin-bottom: 16px;
   padding: 16px 24px;
 }
+
 .custom-button {
   background-color: #8b5cf6;
   color: #ffffff;
@@ -15,25 +16,53 @@
 }
 
 .custom-button:hover {
-  transition: 1s;
+  transition: 0.5s;
   background-color: #9c78f0 !important;
   border: none !important;
 }
 
-.custom-button span {
-    margin-inline-start: 0 !important;
-    margin-right: 8px;
+.ant-btn .ant-btn-icon {
+  margin-inline-start: 0 !important;
+  margin-right: 8px;
 }
 
 .link {
-    text-decoration: none !important;
+  text-decoration: none !important;
 }
-
 
 @media (max-width: 768px) {
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .custom-button {
+    width: 200px;
+  }
+
+  .custom-button span {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 12px 48px;
+    margin-bottom: 24px;
+    border-radius: 8px;
+  }
+
+  .custom-button {
+    width: 80px;
+  }
+
+  #span {
+    display: none;
+  }
+
+  .ant-btn .ant-btn-icon {
+    margin-right: 0;
+    margin-inline-end: 0 !important;
   }
 }

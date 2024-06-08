@@ -14,6 +14,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100%;
 }
 
 tfoot {
@@ -54,4 +55,13 @@ tfoot {
 
 .ant-pagination .ant-pagination-item-active:hover {
   border-color: rgb(139, 92, 246);
+}
+
+@media (max-width: 768px) {
+  tfoot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* padding-right: 16px; */
+  }
 }
