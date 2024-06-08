@@ -8,6 +8,7 @@ import {
   EditOutlined,
 } from "@ant-design/icons";
 import { useState } from "react";
+import logo from "../../assets/logo.svg";
 
 export function SupplierDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -36,8 +37,8 @@ export function SupplierDetailsPage() {
 
   return (
     <div className="details">
+      <img src={logo} alt="" />
       <div className="header">
-        <img src="/logo.svg" alt="" />
         <h1>Detalhes do Fornecedor</h1>
       </div>
       <div className="card">
@@ -150,7 +151,7 @@ export function SupplierDetailsPage() {
             >
               Voltar
             </Button>
-            <div>
+            <div className="edit-delete-container-button">
               <Link to={`/edit/${supplier.id}`}>
                 <Button
                   className="button"
