@@ -13,8 +13,8 @@ export function SupplierForm() {
 
   const openNotification = () => {
     notification.success({
-      message: 'Sucesso',
-      description: 'Fornecedor cadastrado com sucesso!',
+      message: "Sucesso",
+      description: "Fornecedor cadastrado com sucesso!",
     });
   };
 
@@ -24,7 +24,6 @@ export function SupplierForm() {
   useEffect(() => {
     if (isEditing && currentSupplier) {
       form.setFieldsValue(currentSupplier);
-      
     }
   }, [isEditing, currentSupplier, form]);
 
@@ -41,15 +40,17 @@ export function SupplierForm() {
   return (
     <div>
       <Form form={form} onFinish={onFinish} layout="vertical" labelAlign="left">
-        <div className="form card">
-          <ConfigProvider theme={{
-            components: {
-              Form: {
-                labelColor: "#FFFFFF",
-              }
-            }
-          }}>
-            <div>
+        <div className="card">
+          <ConfigProvider
+            theme={{
+              components: {
+                Form: {
+                  labelColor: "#FFFFFF",
+                },
+              },
+            }}
+          >
+            <div className="inputs-container">
               <Form.Item className="custom-label" label="CNPJ">
                 <Space>
                   <Form.Item
@@ -83,6 +84,42 @@ export function SupplierForm() {
                   </Form.Item>
                 </Space>
               </Form.Item>
+            </div>
+            <div className="inputs-container">
+              <Form.Item className="custom-label" label="Responsável">
+                <Space>
+                  <Form.Item
+                    name="responsavel"
+                    noStyle
+                    rules={[
+                      {
+                        required: true,
+                        message: "Por favor, insira o nome do responsável",
+                      },
+                    ]}
+                  >
+                    <Input className="input" />
+                  </Form.Item>
+                </Space>
+              </Form.Item>
+              <Form.Item className="custom-label" label="CPF">
+                <Space>
+                  <Form.Item
+                    name="cpf_responsavel"
+                    noStyle
+                    rules={[
+                      {
+                        required: true,
+                        message: "Por favor, insira o CPF responsável",
+                      },
+                    ]}
+                  >
+                    <Input className="input" />
+                  </Form.Item>
+                </Space>
+              </Form.Item>
+            </div>
+            <div className="inputs-container">
               <Form.Item className="custom-label" label="Razão Social">
                 <Space>
                   <Form.Item
@@ -118,39 +155,7 @@ export function SupplierForm() {
                 </Space>
               </Form.Item>
             </div>
-            <div>
-              <Form.Item className="custom-label" label="Responsável">
-                <Space>
-                  <Form.Item
-                    name="responsavel"
-                    noStyle
-                    rules={[
-                      {
-                        required: true,
-                        message: "Por favor, insira o nome do responsável",
-                      },
-                    ]}
-                  >
-                    <Input className="input" />
-                  </Form.Item>
-                </Space>
-              </Form.Item>
-              <Form.Item className="custom-label" label="CPF">
-                <Space>
-                  <Form.Item
-                    name="cpf_responsavel"
-                    noStyle
-                    rules={[
-                      {
-                        required: true,
-                        message: "Por favor, insira o CPF responsável",
-                      },
-                    ]}
-                  >
-                    <Input className="input" />
-                  </Form.Item>
-                </Space>
-              </Form.Item>
+            <div className="inputs-container">
               <Form.Item className="custom-label" label="Telefone">
                 <Space>
                   <Form.Item
@@ -185,7 +190,7 @@ export function SupplierForm() {
               className="button"
               icon={<ArrowLeftOutlined />}
               type="primary"
-              onClick={() => navigate("/")}
+              onClick={() => navigate("/modulo-cadastro-fornecedor")}
             >
               Voltar
             </Button>
