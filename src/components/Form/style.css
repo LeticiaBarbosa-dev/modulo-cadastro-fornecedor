@@ -27,6 +27,17 @@
   margin-right: 16px;
 }
 
+@media (max-width: 1024px) {
+  .inputs-container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .input {
+    width: 400px;
+  }
+}
+
 @media (max-width: 768px) {
   .inputs-container {
     display: flex;
@@ -35,7 +46,6 @@
 
   .input {
     width: 300px;
-    height: 40px;
   }
 }
 

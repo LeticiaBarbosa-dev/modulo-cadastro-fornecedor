@@ -61,8 +61,7 @@
     display: none;
   }
 
-  .ant-btn .ant-btn-icon {
-    margin-right: 0;
-    margin-inline-end: 0 !important;
+  .anticon-plus {
+    margin-left: 8px;
   }
 }
