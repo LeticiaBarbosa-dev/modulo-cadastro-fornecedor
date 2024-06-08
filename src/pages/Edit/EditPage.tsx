@@ -1,14 +1,14 @@
 import { SupplierForm } from "../../components/Form/SupplierForm";
 import "./style.css";
+import { Header } from "../../components/Header/Header";
 
 export function EditPage() {
   return (
-    <div className="custom-edit-page">
-      <div className="header">
-        <img src="/logo.svg" alt="" />
-        <h1>Editar Fornecedor</h1>
+    <>
+      <Header title="Editar Fornecedor" />
+      <div className="custom-edit-page">
+        <SupplierForm />
       </div>
-      <SupplierForm />
-    </div>
+    </>
   );
 }
