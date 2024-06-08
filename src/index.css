@@ -74,3 +74,17 @@ body {
 .ant-btn-primary:hover {
   background-color: #9c78f0 !important;
 }
+
+.ant-notification .ant-notification-notice-wrapper .ant-notification-notice {
+  background-color: #484849;
+  border-radius: 8px;
+}
+
+.ant-notification-notice-with-icon .ant-notification-notice-message, .ant-notification-notice-description {
+  color: #FFFFFF !important;
+}
+
+.ant-notification-notice-close:hover {
+  transition: 0.5s;
+  background-color: #323232 !important;
+}
