@@ -1,0 +1,15 @@
+.header {
+  padding: 20px;
+  max-width: 1200px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .header {
+    margin-bottom: 0;
+  }
+}
