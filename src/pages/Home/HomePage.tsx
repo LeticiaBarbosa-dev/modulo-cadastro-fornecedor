@@ -1,16 +1,15 @@
 import { Button } from "antd";
 import { Link } from "react-router-dom";
 import { PlusOutlined } from "@ant-design/icons";
-// import { SupplierList } from "../../components/List/SupplierList";
 import "./style.css";
 import { SupplierList } from "../../components/List/SupplierList";
-// import { Table } from "../../components/Table/Table";
+import logo from "../../assets/logo.svg";
 
 export function HomePage() {
   return (
-    <div>
+    <div className="container">
       <div className="header-container">
-        <img src="/logo.svg" alt="" />
+        <img src={logo} alt="" />
         <Link className="link" to="/cadastro">
           <Button
             type="primary"
