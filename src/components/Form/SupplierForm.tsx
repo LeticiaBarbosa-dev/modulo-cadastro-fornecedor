@@ -2,7 +2,11 @@ import { useEffect } from "react";
 import { Supplier, useSuppliers } from "../../context/SupplierContext";
 import { Form, Input, Button, Space, ConfigProvider, notification } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowLeftOutlined, CheckCircleTwoTone, SaveOutlined } from "@ant-design/icons";
+import {
+  ArrowLeftOutlined,
+  CheckCircleTwoTone,
+  SaveOutlined,
+} from "@ant-design/icons";
 import "./style.css";
 
 export function SupplierForm() {
@@ -14,7 +18,7 @@ export function SupplierForm() {
   const openNotification = () => {
     notification.success({
       message: "Fornecedor salvo com sucesso!",
-      icon: <CheckCircleTwoTone twoToneColor="#52c41a" />
+      icon: <CheckCircleTwoTone twoToneColor="#52c41a" />,
     });
   };
 
@@ -31,11 +35,12 @@ export function SupplierForm() {
     if (isEditing && currentSupplier) {
       updateSupplier({ ...currentSupplier, ...values });
       openNotification();
+      navigate(`/fornecedor/${id}`);
     } else {
       addSupplier(values);
       openNotification();
+      navigate("/modulo-cadastro-fornecedor");
     }
-    navigate("/modulo-cadastro-fornecedor/");
   };
 
   return (
@@ -195,6 +200,7 @@ export function SupplierForm() {
             >
               Voltar
             </Button>
+
             <Button
               className="button"
               type="primary"
