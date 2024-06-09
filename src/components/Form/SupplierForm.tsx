@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { Supplier, useSuppliers } from "../../context/SupplierContext";
 import { Form, Input, Button, Space, ConfigProvider, notification } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
-import { ArrowLeftOutlined, SaveOutlined } from "@ant-design/icons";
+import { ArrowLeftOutlined, CheckCircleTwoTone, SaveOutlined } from "@ant-design/icons";
 import "./style.css";
 
 export function SupplierForm() {
@@ -13,8 +13,8 @@ export function SupplierForm() {
 
   const openNotification = () => {
     notification.success({
-      message: "Sucesso",
-      description: "Fornecedor cadastrado com sucesso!",
+      message: "Fornecedor salvo com sucesso!",
+      icon: <CheckCircleTwoTone twoToneColor="#52c41a" />
     });
   };
 

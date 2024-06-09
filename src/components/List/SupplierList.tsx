@@ -16,7 +16,7 @@ export function SupplierList() {
   const { suppliers } = useSuppliers();
   const [currentPage, setCurrentPage] = useState(1);
   const [currentSuppliers, setCurrentSuppliers] = useState<Supplier[]>([]);
-  
+
   useEffect(() => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -34,7 +34,7 @@ export function SupplierList() {
           <tr className="header-table">
             <TableHeader>CNPJ</TableHeader>
             <TableHeader>Nome Fantasia</TableHeader>
-            <TableHeader style={{ width: 40}}></TableHeader>
+            <TableHeader style={{ width: 40 }}></TableHeader>
           </tr>
         </thead>
         <tbody>
