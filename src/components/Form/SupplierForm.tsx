@@ -92,7 +92,7 @@ export function SupplierForm() {
               </Form.Item>
             </div>
             <div className="inputs-container">
-              <Form.Item className="custom-label" label="Responsável">
+              <Form.Item className="custom-label" label="Nome do responsável">
                 <Space>
                   <Form.Item
                     name="responsavel"

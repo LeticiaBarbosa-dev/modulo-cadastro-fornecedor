@@ -46,7 +46,7 @@ export function SupplierDetailsPage() {
 
   return (
     <>
-      <Header title="Detalhes do Fornecedor" />
+      <Header title="Detalhes do fornecedor" />
       <div className="details">
         <div className="card">
           <ConfigProvider
@@ -82,7 +82,7 @@ export function SupplierDetailsPage() {
                   fontSize: 18,
                   marginBottom: -16,
                 }}
-                label="Inscrição Estadual"
+                label="Inscrição estadual"
               >
                 {supplier.inscricao_estadual}
               </Descriptions.Item>
@@ -93,7 +93,7 @@ export function SupplierDetailsPage() {
                   fontSize: 18,
                   marginBottom: -16,
                 }}
-                label="Razão Social"
+                label="Razão social"
               >
                 {supplier.razao_social}
               </Descriptions.Item>
@@ -104,7 +104,7 @@ export function SupplierDetailsPage() {
                   fontSize: 18,
                   marginBottom: -16,
                 }}
-                label="Nome do Responsável"
+                label="Nome do responsável"
               >
                 {supplier.responsavel}
               </Descriptions.Item>
@@ -115,7 +115,7 @@ export function SupplierDetailsPage() {
                   fontSize: 18,
                   marginBottom: -16,
                 }}
-                label="CPF do Responsável"
+                label="CPF do responsável"
               >
                 {supplier.cpf_responsavel}
               </Descriptions.Item>
@@ -137,7 +137,7 @@ export function SupplierDetailsPage() {
                   fontSize: 18,
                   marginBottom: -16,
                 }}
-                label="Email"
+                label="E-mail"
               >
                 {supplier.email}
               </Descriptions.Item>
