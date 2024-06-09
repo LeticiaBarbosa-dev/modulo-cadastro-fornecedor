@@ -9,7 +9,6 @@ body {
 
 .card {
   background-color: rgba(211, 211, 212, 0.05);
-  padding: 12px 48px;
   margin-bottom: 24px;
   border-radius: 8px;
 }
@@ -76,13 +75,27 @@ body {
   border-radius: 8px;
 }
 
-.ant-notification-notice-with-icon .ant-notification-notice-message, .ant-notification-notice-description {
-  color: #FFFFFF !important;
+.ant-notification-notice-with-icon .ant-notification-notice-message,
+.ant-notification-notice-description {
+  color: #ffffff !important;
 }
 
 .ant-notification-notice-close:hover {
   transition: 0.5s;
   background-color: #323232 !important;
+}
+
+body::-webkit-scrollbar {
+  width: 8px;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: rgba(211, 211, 212, 0.5);
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #323232;
+  border-radius: 16px;
 }
 
 @media (max-width: 768px) {

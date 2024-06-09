@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 import { IconButton } from "../IconButton";
 import "./style.css";
 import { useEffect, useState } from "react";
-import { Button, ConfigProvider, Pagination, notification } from "antd";
+import { ConfigProvider, Pagination } from "antd";
 
 const ITEMS_PER_PAGE = 8;
 
@@ -16,14 +16,7 @@ export function SupplierList() {
   const { suppliers } = useSuppliers();
   const [currentPage, setCurrentPage] = useState(1);
   const [currentSuppliers, setCurrentSuppliers] = useState<Supplier[]>([]);
-
-  const openNotification = () => {
-    notification.success({
-      message: "Sucesso",
-      description: "Fornecedor cadastrado com sucesso!",
-    });
-  };
-
+  
   useEffect(() => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
     const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -40,9 +33,7 @@ export function SupplierList() {
         <thead>
           <tr className="header-table">
             <TableHeader>CNPJ</TableHeader>
-            {/* <TableHeader>Razão Social</TableHeader> */}
             <TableHeader>Nome Fantasia</TableHeader>
-            {/* <TableHeader>Telefone</TableHeader> */}
             <TableHeader style={{ width: 40}}></TableHeader>
           </tr>
         </thead>
@@ -51,9 +42,7 @@ export function SupplierList() {
             return (
               <TableRow key={supplier.id}>
                 <TableCell>{supplier.cnpj}</TableCell>
-                {/* <TableCell>{supplier.razao_social}</TableCell> */}
                 <TableCell>{supplier.nome_fantasia}</TableCell>
-                {/* <TableCell>{supplier.telefone}</TableCell> */}
                 <TableCell id="button-view-cell">
                   <Link to={`/fornecedor/${supplier.id}`} key="view">
                     <IconButton className="custom-view-button">
@@ -86,7 +75,6 @@ export function SupplierList() {
             onChange={handlePageChange}
             style={{ color: "#FFFFFF", textAlign: "left" }}
           />
-          <Button onClick={() => openNotification()} />
         </ConfigProvider>
       </tfoot>
     </div>
