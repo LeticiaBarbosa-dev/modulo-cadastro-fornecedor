@@ -30,6 +30,7 @@ export function SupplierForm() {
   const onFinish = (values: Supplier) => {
     if (isEditing && currentSupplier) {
       updateSupplier({ ...currentSupplier, ...values });
+      openNotification();
     } else {
       addSupplier(values);
       openNotification();
