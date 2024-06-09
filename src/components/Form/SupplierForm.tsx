@@ -68,7 +68,7 @@ export function SupplierForm() {
                   </Form.Item>
                 </Space>
               </Form.Item>
-              <Form.Item className="custom-label" label="Inscrição Estadual">
+              <Form.Item className="custom-label" label="Inscrição estadual">
                 <Space>
                   <Form.Item
                     name="inscricao_estadual"
@@ -103,7 +103,7 @@ export function SupplierForm() {
                   </Form.Item>
                 </Space>
               </Form.Item>
-              <Form.Item className="custom-label" label="CPF">
+              <Form.Item className="custom-label" label="CPF do responsável">
                 <Space>
                   <Form.Item
                     name="cpf_responsavel"
@@ -121,7 +121,7 @@ export function SupplierForm() {
               </Form.Item>
             </div>
             <div className="inputs-container">
-              <Form.Item className="custom-label" label="Razão Social">
+              <Form.Item className="custom-label" label="Razão social">
                 <Space>
                   <Form.Item
                     name="razao_social"
@@ -138,7 +138,7 @@ export function SupplierForm() {
                   </Form.Item>
                 </Space>
               </Form.Item>
-              <Form.Item className="custom-label" label="Nome Fantasia">
+              <Form.Item className="custom-label" label="Nome fantasia">
                 <Space>
                   <Form.Item
                     name="nome_fantasia"
