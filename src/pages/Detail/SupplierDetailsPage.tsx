@@ -1,9 +1,10 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { useSuppliers } from "../../context/SupplierContext";
-import { Descriptions, Button, Modal, ConfigProvider } from "antd";
+import { Descriptions, Button, Modal, ConfigProvider, notification } from "antd";
 import "./style.css";
 import {
   ArrowLeftOutlined,
+  CheckCircleTwoTone,
   DeleteOutlined,
   EditOutlined,
 } from "@ant-design/icons";
@@ -16,6 +17,13 @@ export function SupplierDetailsPage() {
   const supplier = getSupplierById(id!);
   const navigate = useNavigate();
   const [modalVisible, setModalVisible] = useState(false);
+
+  const openNotification = () => {
+    notification.success({
+      message: "Fornecedor excluído!",
+      icon: <CheckCircleTwoTone twoToneColor="#52c41a" />,
+    });
+  };
 
   if (!supplier) {
     return <p>Fornecedor não encontrado!</p>;
@@ -33,6 +41,7 @@ export function SupplierDetailsPage() {
     deleteSupplier(supplier.id);
     navigate("/modulo-cadastro-fornecedor/");
     setModalVisible(false);
+    openNotification();
   };
 
   return (
